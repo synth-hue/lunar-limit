@@ -1,4 +1,8 @@
 ---
+import '../styles/global.css';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+
 const pageTitle ="Notes"
 ---
 
@@ -11,9 +15,7 @@ const pageTitle ="Notes"
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-		<a href="/">Overview</a>
-		<a href="/about">Introduction</a>
-		<a href="/blog">My Notes</a>
+		<Navigation />
 
 		<h1>{pageTitle}</h1>
 		<p>I try to publish at least 3 times week. I'm not spending a lot of time self editing so embrace all the mistakes
@@ -26,5 +28,6 @@ const pageTitle ="Notes"
 			<li><a href="/notes/note-2">Second note</a></li>
 			<li><a href="/notes/note-3">Third note</a></li>
 		</ul>
+		<Footer />
 	</body>
 </html>
