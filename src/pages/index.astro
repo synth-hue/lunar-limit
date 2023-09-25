@@ -1,5 +1,7 @@
 ---
+import Navigation from '../components/Navigation.astro'
 
+const pageTitle ="Overview"
 ---
 
 <html lang="en">
@@ -8,13 +10,11 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
-		<a href="/">Overview</a>
-		<a href="/about">Introduction</a>
-		<a href="/blog">My Notes</a>
-
-		<h1>It's messy out here</h1>
+		<Navigation />
+		<h1>{pageTitle}</h1>
+		<p>Design 1.0</p>
 	</body>
 </html>

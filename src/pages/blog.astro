@@ -1,5 +1,5 @@
 ---
-
+const pageTitle ="Notes"
 ---
 
 <html lang="en">
@@ -8,16 +8,23 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
 		<a href="/">Overview</a>
 		<a href="/about">Introduction</a>
 		<a href="/blog">My Notes</a>
 
-		<h1>All the notes</h1>
+		<h1>{pageTitle}</h1>
 		<p>I try to publish at least 3 times week. I'm not spending a lot of time self editing so embrace all the mistakes
 			and typos and appreciate the ideas being captured.
 		</p>
+
+		<h2>Note list</h2>
+		<ul>
+			<li><a href="/notes/note-1">First note</a></li>
+			<li><a href="/notes/note-2">Second note</a></li>
+			<li><a href="/notes/note-3">Third note</a></li>
+		</ul>
 	</body>
 </html>
