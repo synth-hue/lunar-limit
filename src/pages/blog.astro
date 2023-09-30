@@ -1,33 +1,18 @@
 ---
-import '../styles/global.css';
-import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NotePost from '../components/NotePost.astro';
 
+const allNotes = await Astro.glob('../notes/*.md');
 const pageTitle ="Notes"
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-	</head>
-	<body>
-		<Navigation />
+<BaseLayout pageTitle={pageTitle}>
+	<p>I try to publish at least 3 times week. I'm not spending a lot of time self editing so embrace all the mistakes
+		and typos and appreciate the ideas being captured.
+	</p>
 
-		<h1>{pageTitle}</h1>
-		<p>I try to publish at least 3 times week. I'm not spending a lot of time self editing so embrace all the mistakes
-			and typos and appreciate the ideas being captured.
-		</p>
-
-		<h2>Note list</h2>
-		<ul>
-			<li><a href="/notes/note-1">First note</a></li>
-			<li><a href="/notes/note-2">Second note</a></li>
-			<li><a href="/notes/note-3">Third note</a></li>
-		</ul>
-		<Footer />
-	</body>
-</html>
+	<h2>Note list</h2>
+	<ul>
+		{allNotes.map((note) => <NotePost url={note.url} title={note.frontmatter.title}></NotePost> )}
+	</ul>
+</BaseLayout>

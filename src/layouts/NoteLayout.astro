@@ -1,22 +1,11 @@
 ---
-const { title } = Astro.props
+import BaseLayout from './BaseLayout.astro';
+const { frontmatter } = Astro.props;
 ---
-
-
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
-  <body>
-    <nav>
-        <a href="/">Overview</a>
-		<a href="/about">Introduction</a>
-		<a href="/blog">My Notes</a>
-    </nav>
-    <h1>{title}</h1>
-    <article>
-      <slot /> <!-- your content is injected here -->
-    </article>
-  </body>
-</html>
+<BaseLayout pageTitle={frontmatter.title}>
+  <p>Jotted down by {frontmatter.author}</p>
+  <p><em>{frontmatter.description}</em></p>
+  <p>{frontmatter.pubDate.slice(0,10)}</p>
+  <img src={frontmatter.image.url} width="300" alt={frontmatter.image.at} />
+  <slot />
+</BaseLayout>

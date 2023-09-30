@@ -9,13 +9,6 @@ image:
     alt: 'The full Astro logo'
 tags: ["astro", "blogging", "creativity", "design"]
 ---
-
-# My first note 
-
-Published on: 2022-07-01
-
-
-
 ## What I've done so far
 
 1. **Installing Astro**: First, I created a new Astro project and set up my online accounts.
