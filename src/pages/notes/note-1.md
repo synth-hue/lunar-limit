@@ -7,7 +7,7 @@ author: 'Riley Jones'
 image:
     url: 'https://docs.astro.build/assets/full-logo-light.png'
     alt: 'The full Astro logo'
-tags: ["astro", "blogging", "creativity", "design"]
+tags: ["design"]
 ---
 ## What I've done so far
 

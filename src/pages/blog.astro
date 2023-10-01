@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import NotePost from '../components/NotePost.astro';
 
-const allNotes = await Astro.glob('../notes/*.md');
+const allNotes = await Astro.glob('../pages/notes/*.md');
 const pageTitle ="Notes"
 ---
 
@@ -13,6 +13,6 @@ const pageTitle ="Notes"
 
 	<h2>Note list</h2>
 	<ul>
-		{allNotes.map((note) => <NotePost url={note.url} title={note.frontmatter.title}></NotePost> )}
+		{allNotes.map((note) => <NotePost url={note.url} title={note.frontmatter.title} />)}
 	</ul>
 </BaseLayout>
